@@ -1,5 +1,6 @@
 import React from "react";
 import slide1 from '../assets/Slider_plants3.jpg'
+import { NavLink } from "react-router";
 const Card = ({ product }) => {
   return (
     <div className="card bg-base-100 shadow-lg rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 w-full">
@@ -35,7 +36,9 @@ const Card = ({ product }) => {
 
         {/* View Details Button */}
         <div className="card-actions justify-center">
-          <button className="btn btn-primary btn-sm">View Details</button>
+         <NavLink to={`/plantDetails/${product.plantId}`}>
+            <button className="btn btn-primary btn-sm">View Details</button>
+          </NavLink>
         </div>
       </div>
     </div>

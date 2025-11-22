@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "plantName": "Snake Plant",
+    "watering": "Water every 2-3 weeks, let soil dry completely between waterings.",
+    "sunlight": "Thrives in indirect light but tolerates low light conditions.",
+    "fertilizing": "Fertilize once a month during spring and summer with a balanced fertilizer."
+  },
+  {
+    "id": 2,
+    "plantName": "Spider Plant",
+    "watering": "Keep soil slightly moist; water once a week in summer, reduce in winter.",
+    "sunlight": "Bright, indirect light is ideal, avoid direct sun.",
+    "fertilizing": "Feed every 2-4 weeks during the growing season with liquid fertilizer."
+  },
+  {
+    "id": 3,
+    "plantName": "Peace Lily",
+    "watering": "Water weekly and keep soil consistently moist but not soggy.",
+    "sunlight": "Thrives in low to medium indirect light.",
+    "fertilizing": "Fertilize every 6 weeks during spring and summer."
+  },
+  {
+    "id": 4,
+    "plantName": "Aloe Vera",
+    "watering": "Allow soil to dry completely between waterings; water every 3 weeks.",
+    "sunlight": "Needs bright, indirect sunlight.",
+    "fertilizing": "Feed sparingly once or twice during the growing season."
+  },
+  {
+    "id": 5,
+    "plantName": "Fiddle Leaf Fig",
+    "watering": "Water when the top 2 inches of soil are dry, usually once a week.",
+    "sunlight": "Requires bright, filtered light.",
+    "fertilizing": "Feed once a month in spring and summer with indoor plant fertilizer."
+  },
+  {
+    "id": 6,
+    "plantName": "Money Plant",
+    "watering": "Water moderately; let the soil dry slightly between waterings.",
+    "sunlight": "Prefers bright, indirect light.",
+    "fertilizing": "Fertilize monthly during spring and summer with a balanced fertilizer."
+  }
+]

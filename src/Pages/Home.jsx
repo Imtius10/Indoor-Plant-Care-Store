@@ -3,6 +3,9 @@ import React from 'react';
 import Slider from '../Components/Slider';
 import { useLoaderData } from 'react-router';
 import Card from '../Components/Card';
+import CareTipsSection from '../Components/CareTipsSection';
+import GreenExpertsSection from '../Components/GreenExpertsSection';
+import PlantDetails from './PlantDetails';
 
 const Home = () => {
   const products = useLoaderData();
@@ -22,7 +25,11 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <CareTipsSection></CareTipsSection>
+      <GreenExpertsSection></GreenExpertsSection>
+     
     </div>
+    
   );
 };
 

@@ -94,17 +94,6 @@
     "description": "Lush green fronds that like humidity and indirect sunlight.",
     "image": "https://i.postimg.cc/example8.png",
     "providerName": "GreenLeaf Nursery"
-  },
-  {
-    "plantId": 9,
-    "plantName": "Jade Plant",
-    "category": "Succulent",
-    "price": 18,
-    "rating": 4.7,
-    "availableStock": 7,
-    "careLevel": "Easy",
-    "description": "A succulent that symbolizes good luck and requires minimal care.",
-    "image": "https://i.postimg.cc/example9.png",
-    "providerName": "UrbanGreen Studio"
   }
+
 ]
