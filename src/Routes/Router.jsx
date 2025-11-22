@@ -4,6 +4,7 @@ import Navbar from "../Components/Navbar";
 import Register from "../Pages/Register";
 import Home from "../Pages/Home";
 import PlantDetails from "../Pages/PlantDetails";
+import Login from "../Pages/Login";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
                 path: "/plantDetails/:id",
                 loader:()=>fetch('/plants.json'),
                 element: <PlantDetails />
+            },
+           
+            {
+                path:'/login',
+                Component:Login
             }
         ]
     }
