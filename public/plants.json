@@ -1,0 +1,110 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://i.postimg.cc/example1.png",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Spider Plant",
+    "category": "Air Purifier",
+    "price": 12,
+    "rating": 4.6,
+    "availableStock": 15,
+    "careLevel": "Easy",
+    "description": "A resilient plant that grows quickly and produces baby plants.",
+    "image": "https://i.postimg.cc/example2.png",
+    "providerName": "GreenLeaf Nursery"
+  },
+  {
+    "plantId": 3,
+    "plantName": "Peace Lily",
+    "category": "Flowering",
+    "price": 25,
+    "rating": 4.7,
+    "availableStock": 8,
+    "careLevel": "Medium",
+    "description": "Beautiful white blooms and purifies the air effectively.",
+    "image": "https://i.postimg.cc/example3.png",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 4,
+    "plantName": "Aloe Vera",
+    "category": "Succulent",
+    "price": 15,
+    "rating": 4.5,
+    "availableStock": 20,
+    "careLevel": "Easy",
+    "description": "A succulent plant known for its medicinal properties.",
+    "image": "https://i.postimg.cc/example4.png",
+    "providerName": "HomePlants Co."
+  },
+  {
+    "plantId": 5,
+    "plantName": "Fiddle Leaf Fig",
+    "category": "Foliage",
+    "price": 40,
+    "rating": 4.4,
+    "availableStock": 5,
+    "careLevel": "Medium",
+    "description": "Large, beautiful leaves perfect for bright indoor spaces.",
+    "image": "https://i.postimg.cc/example5.png",
+    "providerName": "GreenLeaf Nursery"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Money Plant",
+    "category": "Lucky Plant",
+    "price": 10,
+    "rating": 4.3,
+    "availableStock": 12,
+    "careLevel": "Easy",
+    "description": "Symbolizes prosperity and is easy to grow indoors.",
+    "image": "https://i.postimg.cc/example6.png",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 7,
+    "plantName": "Rubber Plant",
+    "category": "Foliage",
+    "price": 30,
+    "rating": 4.6,
+    "availableStock": 6,
+    "careLevel": "Medium",
+    "description": "Glossy leaves that can grow large and thrive in moderate light.",
+    "image": "https://i.postimg.cc/example7.png",
+    "providerName": "HomePlants Co."
+  },
+  {
+    "plantId": 8,
+    "plantName": "Boston Fern",
+    "category": "Foliage",
+    "price": 22,
+    "rating": 4.5,
+    "availableStock": 9,
+    "careLevel": "Medium",
+    "description": "Lush green fronds that like humidity and indirect sunlight.",
+    "image": "https://i.postimg.cc/example8.png",
+    "providerName": "GreenLeaf Nursery"
+  },
+  {
+    "plantId": 9,
+    "plantName": "Jade Plant",
+    "category": "Succulent",
+    "price": 18,
+    "rating": 4.7,
+    "availableStock": 7,
+    "careLevel": "Easy",
+    "description": "A succulent that symbolizes good luck and requires minimal care.",
+    "image": "https://i.postimg.cc/example9.png",
+    "providerName": "UrbanGreen Studio"
+  }
+]
