@@ -87,3 +87,26 @@ The platform is **responsive, visually elegant**, and built with **React, Tailwi
     "providerName": "UrbanGreen Studio"
   }
 ]
+## 🛠 Tech Stack & Packages
+
+- **Frontend:** React, TailwindCSS  
+- **Routing:** React Router v6  
+- **Authentication:** Firebase (Email/Password, Google)  
+- **Notifications:** React Hot Toast  
+- **Icons:** React Icons / Phosphor Icons  
+- **Animations:** Swiper.js / Framer Motion  
+
+---
+
+## ⚡ Challenges & Solutions
+
+| Challenge | Solution |
+|-----------|---------|
+| Real-time profile updates | Firebase `updateProfile()` + AuthContext state update |
+| Forgot Password | Firebase password reset integrated |
+| Smooth SPA navigation | React Router v6 + `useNavigation()` loader |
+| Dynamic avatar fallback | Default icon displayed if `photoURL` missing |
+| Password validation | Regex for uppercase, lowercase, and minimum length |
+
+---
+
