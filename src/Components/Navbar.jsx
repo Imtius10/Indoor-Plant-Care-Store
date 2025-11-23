@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { NavLink } from "react-router";
 import { AuthContext } from "../Provider/AuthProvider";
 import logo from "../assets/logo.png";
+import { PiUserCircleCheckThin } from "react-icons/pi";
 
 const Navbar = () => {
   const { user, setUser, doSignOut } = useContext(AuthContext);
@@ -52,9 +53,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar bg-base-100 shadow-sm px-4">
-      {/* Navbar Start */}
+      
       <div className="navbar-start">
-        {/* Mobile Menu Button */}
+       
         <div className="dropdown">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -71,7 +72,7 @@ const Navbar = () => {
             </svg>
           </button>
 
-          {/* Mobile Dropdown Menu */}
+          
           {menuOpen && (
             <ul className="menu dropdown-content bg-base-100 rounded-box mt-3 p-2 shadow w-52 flex flex-col gap-2">
               <li>{links}</li>
@@ -108,40 +109,37 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Logo */}
+       
         <NavLink to="/" className="btn btn-ghost text-xl">
           <img className="h-40 w-auto" src={logo} alt="logo" />
         </NavLink>
       </div>
 
-      {/* Navbar Center - Desktop Links */}
+      
       <div className="navbar-center hidden lg:flex gap-5">{links}</div>
 
-      {/* Navbar End - Desktop Auth / Avatar */}
+    
       <div className="navbar-end hidden lg:flex items-center gap-3">
         {user ? (
           <div className="dropdown dropdown-end">
-            {/* Avatar Button */}
+            
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img
-                  src={user.photoURL || "https://i.ibb.co/YWcsG0v/user.png"}
-                  alt="User Avatar"
-                />
+              <div className="w-15 rounded-full bg-green-500">
+                <PiUserCircleCheckThin size={38} color="white" />
               </div>
             </label>
 
-            {/* Dropdown Menu */}
+          
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[20] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-20 p-2 shadow bg-base-100 rounded-box w-52 text-center"
             >
               <li className="font-bold text-center">
                 {user.displayName || "User"}
               </li>
 
               <li>
-                <NavLink to="/profile">Profile</NavLink>
+                <NavLink to="/profile" >Profile</NavLink>
               </li>
 
               <li>

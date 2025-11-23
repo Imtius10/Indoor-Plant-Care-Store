@@ -8,7 +8,7 @@
     "availableStock": 10,
     "careLevel": "Easy",
     "description": "A hardy plant that purifies indoor air and thrives in low light.",
-    "image": "https://i.postimg.cc/example1.png",
+    "image": "https://i.ibb.co.com/CRqjcS5/Snake-Plant.webp",
     "providerName": "UrbanGreen Studio"
   },
   {
@@ -20,7 +20,7 @@
     "availableStock": 15,
     "careLevel": "Easy",
     "description": "A resilient plant that grows quickly and produces baby plants.",
-    "image": "https://i.postimg.cc/example2.png",
+    "image": "https://i.ibb.co.com/zh7TT104/Spider-Plant.jpg",
     "providerName": "GreenLeaf Nursery"
   },
   {
@@ -32,7 +32,7 @@
     "availableStock": 8,
     "careLevel": "Medium",
     "description": "Beautiful white blooms and purifies the air effectively.",
-    "image": "https://i.postimg.cc/example3.png",
+    "image": "https://i.ibb.co.com/DPcRK08M/Peace-Lily.jpg",
     "providerName": "UrbanGreen Studio"
   },
   {
@@ -44,19 +44,19 @@
     "availableStock": 20,
     "careLevel": "Easy",
     "description": "A succulent plant known for its medicinal properties.",
-    "image": "https://i.postimg.cc/example4.png",
+    "image": "https://i.ibb.co.com/fdX6C1Mx/Aloe-Vera.webp",
     "providerName": "HomePlants Co."
   },
   {
     "plantId": 5,
-    "plantName": "Fiddle Leaf Fig",
+    "plantName": "Fiddle Leaf",
     "category": "Foliage",
     "price": 40,
     "rating": 4.4,
     "availableStock": 5,
     "careLevel": "Medium",
     "description": "Large, beautiful leaves perfect for bright indoor spaces.",
-    "image": "https://i.postimg.cc/example5.png",
+    "image": "https://i.ibb.co.com/Pv4MVScX/Fiddle-Leaf.jpg",
     "providerName": "GreenLeaf Nursery"
   },
   {
@@ -68,7 +68,7 @@
     "availableStock": 12,
     "careLevel": "Easy",
     "description": "Symbolizes prosperity and is easy to grow indoors.",
-    "image": "https://i.postimg.cc/example6.png",
+    "image": "https://i.ibb.co.com/ycMtyhBh/Money-Plant.jpg",
     "providerName": "UrbanGreen Studio"
   },
   {
@@ -80,7 +80,7 @@
     "availableStock": 6,
     "careLevel": "Medium",
     "description": "Glossy leaves that can grow large and thrive in moderate light.",
-    "image": "https://i.postimg.cc/example7.png",
+    "image": "https://i.ibb.co.com/GQt7Nkhr/Rubber-Plant.webp",
     "providerName": "HomePlants Co."
   },
   {
@@ -92,7 +92,7 @@
     "availableStock": 9,
     "careLevel": "Medium",
     "description": "Lush green fronds that like humidity and indirect sunlight.",
-    "image": "https://i.postimg.cc/example8.png",
+    "image": "https://i.ibb.co.com/twp3M7dJ/Boston-Fern.webp",
     "providerName": "GreenLeaf Nursery"
   }
 

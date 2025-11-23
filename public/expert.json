@@ -3,18 +3,18 @@
     "id": 1,
     "name": "Alice Green",
     "specialization": "Snake Plant & Air Purifiers",
-    "image": "https://i.postimg.cc/example-expert1.png"
+    "image": "https://i.ibb.co.com/dsqYbzdq/p1.jpg"
   },
   {
     "id": 2,
     "name": "Bob Leaf",
     "specialization": "Spider Plant & Easy Indoor Plants",
-    "image": "https://i.postimg.cc/example-expert2.png"
+    "image": "https://i.ibb.co.com/4RmPk0KB/p2.jpg"
   },
   {
     "id": 3,
     "name": "Catherine Bloom",
     "specialization": "Peace Lily & Flowering Plants",
-    "image": "https://i.postimg.cc/example-expert3.png"
+    "image": "https://i.ibb.co.com/V0MLnnSP/p3.jpg"
   }
 ]

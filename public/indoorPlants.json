@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Purifies Air",
+    "description": "Indoor plants remove toxins and improve air quality, making your home healthier."
+  },
+  {
+    "id": 2,
+    "title": "Reduces Stress",
+    "description": "Being around greenery reduces stress and anxiety, and boosts your mood."
+  },
+  {
+    "id": 3,
+    "title": "Boosts Productivity",
+    "description": "Having plants in your workspace improves focus, creativity, and productivity."
+  },
+  {
+    "id": 4,
+    "title": "Improves Humidity",
+    "description": "Plants release moisture into the air, which is great for your skin and respiratory system."
+  },
+  {
+    "id": 5,
+    "title": "Aesthetic Appeal",
+    "description": "Indoor plants add beauty, color, and life to your home decor."
+  }
+]

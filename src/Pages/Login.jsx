@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa"
@@ -9,6 +9,11 @@ const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,9 +23,16 @@ const Login = () => {
     e.preventDefault();
     setError("");
 
-    loginUser(formData.email, formData.password)
-      .then(() => toast.success("Login successful!"))
-      .catch((err) => setError(err.message));
+    const { email, password } = formData;
+
+    loginUser(email, password)
+      .then(() => {
+        toast.success("Login successful!");
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
   };
 
   return (
@@ -33,24 +45,25 @@ const Login = () => {
 
         {error && <p className="text-center text-red-500 mb-4 text-sm">{error}</p>}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full border border-green-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-400"
-          />
+        <form onSubmit={handleSubmit} className="space-y-4 text-black">
+          <div>
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full border border-green-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-400"
+            />
+          </div>
 
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Password"
-              value={formData.password}
-              onChange={handleChange}
               required
               className="w-full border border-green-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-400"
             />

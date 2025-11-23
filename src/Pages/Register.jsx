@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import toast, { Toaster } from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye } from "react-icons/fa";
@@ -8,7 +8,9 @@ import { FaEyeSlash } from "react-icons/fa"
 const Register = () => {
   const { createUser, setUser, signInWithGoogle } = useContext(AuthContext);
   const [error, setError] = useState("");
-  const [showPassword, setShowPassword] = useState(false); // toggle state
+  const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,10 +20,27 @@ const Register = () => {
     const photo_url = form.photo_url.value;
     const password = form.password.value;
 
+    
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      setError("Password must contain at least one uppercase letter");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      setError("Password must contain at least one lowercase letter");
+      return;
+    }
+
+    setError("");
+
     createUser(email, password)
       .then((result) => {
         setUser(result.user);
         toast.success("Registered successfully!");
+        navigate("/");   
       })
       .catch((err) => setError(err.message));
   };
@@ -31,6 +50,7 @@ const Register = () => {
       .then((res) => {
         setUser(res.user);
         toast.success("Signed in with Google!");
+        navigate("/");  
       })
       .catch((err) => toast.error(err.message));
   };
@@ -53,6 +73,7 @@ const Register = () => {
             required
             className="w-full border border-green-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-400"
           />
+
           <input
             type="text"
             name="photo_url"
@@ -60,6 +81,7 @@ const Register = () => {
             required
             className="w-full border border-green-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-400"
           />
+
           <input
             type="email"
             name="email"
@@ -67,6 +89,7 @@ const Register = () => {
             required
             className="w-full border border-green-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-green-400"
           />
+
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
@@ -79,7 +102,7 @@ const Register = () => {
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-3 cursor-pointer text-green-600 font-semibold"
             >
-             {showPassword ? <FaEye /> : <FaEyeSlash />}
+              {showPassword ? <FaEye /> : <FaEyeSlash />}
             </span>
           </div>
 

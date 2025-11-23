@@ -34,15 +34,15 @@ const PlantDetails = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-1 gap-10">
 
-                {/* Plant Image - Centered */}
+              
                 <div className="w-full flex justify-center">
                     <img
-                        src={slide4}
+                        src={plant.image}
                         alt={plant.plantName}
                         className="w-full max-w-5xl object-contain rounded-2xl shadow-lg"
                     />
                 </div>
-                {/* Plant Info */}
+               
                 <div className="flex flex-col justify-start">
                     <h1 className="text-3xl font-bold text-green-900 mb-4">
                         {plant.plantName}
@@ -66,7 +66,7 @@ const PlantDetails = () => {
                         Stock Available: {plant.availableStock}
                     </p>
 
-                    {/* Booking Form */}
+                   
                     <div className="mt-6">
                         <h2 className="text-2xl font-semibold mb-4 text-green-800">
                             Book Consultation

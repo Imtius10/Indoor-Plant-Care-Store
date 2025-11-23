@@ -2,25 +2,31 @@ import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { updateProfile, getAuth } from "firebase/auth";
 import toast, { Toaster } from "react-hot-toast";
+import { PiUserCircleThin } from "react-icons/pi"; 
 
 const Profile = () => {
   const { user, setUser } = useContext(AuthContext);
   const auth = getAuth();
 
+  const getDefaultName = () => {
+    if (user?.displayName) return user.displayName;
+    if (user?.email) return user.email.split("@")[0]; 
+    return "";
+  };
+
   const [formData, setFormData] = useState({
-    displayName: user?.displayName || "",
+    displayName: getDefaultName(),
     photoURL: user?.photoURL || "",
   });
 
   const [loading, setLoading] = useState(false);
 
+
   useEffect(() => {
-    if (user) {
-      setFormData({
-        displayName: user.displayName || "",
-        photoURL: user.photoURL || "",
-      });
-    }
+    setFormData({
+      displayName: getDefaultName(),
+      photoURL: user?.photoURL || "",
+    });
   }, [user]);
 
   const handleChange = (e) => {
@@ -39,10 +45,8 @@ const Profile = () => {
         photoURL: formData.photoURL,
       });
 
-      // update state so navbar updates immediately
-      setUser({
-        ...auth.currentUser,
-      });
+     
+      setUser({ ...auth.currentUser });
 
       toast.success("Profile updated successfully!");
     } catch (error) {
@@ -59,31 +63,38 @@ const Profile = () => {
         Please login to view your profile.
       </p>
     );
-  
+
   return (
-    <div className="container mx-auto py-12 px-4 max-w-lg">
+    <div className="container mx-auto py-12 px-4 max-w-3xl">
       <Toaster position="top-right" />
-      <h1 className="text-3xl font-bold text-green-900 mb-6 text-center">
+
+      <h1 className="text-3xl font-bold text-[#75d705] mb-6 text-center">
         My Profile
       </h1>
 
-      {user.photoURL && (
-        <div className="flex justify-center mb-6">
+    
+      <div className="flex flex-col items-center bg-green-100 p-6 rounded-2xl shadow-md mb-8 text-black">
+        {formData.photoURL ? (
           <img
-            src={user.photoURL}
+            src={formData.photoURL}
             alt="Profile"
-            className="w-32 h-32 rounded-full object-cover shadow-lg"
+            className="w-32 h-32 rounded-full object-cover shadow-lg mb-4"
           />
-          <div><h1>{user.name}</h1></div>
+        ) : (
+          <div className="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center mb-4">
+            <PiUserCircleThin size={80} className="text-gray-400" />
+          </div>
+        )}
+        <h2 className="text-xl font-semibold">
+          {formData.displayName || "No Name"}
+        </h2>
+        <p className="text-gray-600">{user.email}</p>
+      </div>
 
-        </div>
-        
-        
-      )}
-
+   
       <form
         onSubmit={handleUpdate}
-        className="flex flex-col space-y-4 bg-white p-6 rounded-2xl shadow-md text-black"
+        className="flex flex-col space-y-4 bg-green-100 p-6 rounded-2xl shadow-md text-black"
       >
         <label className="font-semibold text-gray-700">Name</label>
         <input
