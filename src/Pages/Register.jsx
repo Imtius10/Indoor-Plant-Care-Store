@@ -119,7 +119,7 @@ const Register = () => {
             onClick={handleGoogleSignIn}
             className="flex items-center gap-2 border border-gray-300 p-2 rounded-lg hover:bg-gray-100 w-full justify-center text-black"
           >
-            <FcGoogle size={24} /> 
+            <FcGoogle size={24} /> <p>Login with Goolge</p>
           </button>
         </div>
 
