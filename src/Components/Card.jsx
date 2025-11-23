@@ -1,5 +1,5 @@
 import React from "react";
-import slide1 from '../assets/Slider_plants3.jpg'
+
 import { NavLink } from "react-router";
 const Card = ({ product }) => {
   return (

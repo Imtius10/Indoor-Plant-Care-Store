@@ -1,4 +1,3 @@
-// Home.jsx
 import React, { useState } from "react";
 import Slider from "../Components/Slider";
 import { NavLink, useLoaderData } from "react-router";

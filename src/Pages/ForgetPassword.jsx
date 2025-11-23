@@ -1,4 +1,3 @@
-// ForgetPassword.jsx
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
