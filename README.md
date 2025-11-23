@@ -87,7 +87,8 @@ The platform is **responsive, visually elegant**, and built with **React, Tailwi
     "providerName": "UrbanGreen Studio"
   }
 ]
-## 🛠 Tech Stack & Packages
+```
+🛠 Tech Stack & Packages
 
 - **Frontend:** React, TailwindCSS  
 - **Routing:** React Router v6  
