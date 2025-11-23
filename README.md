@@ -1,16 +1,89 @@
-# React + Vite
+# 🌱 GreenNest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react&logoColor=white)](https://reactjs.org/) 
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3.2-teal?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/) 
+[![Firebase](https://img.shields.io/badge/Firebase-9.22.0-orange?logo=firebase&logoColor=white)](https://firebase.google.com/) 
+[![License](https://img.shields.io/badge/License-Educational-green)](#)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Project Overview
+**GreenNest** is a single-page web application for indoor plant lovers. Users can browse plants, view detailed care guides, book consultations with experts, and manage their personal profiles.  
 
-## React Compiler
+The platform is **responsive, visually elegant**, and built with **React, TailwindCSS, Firebase Authentication**, and JSON-based plant data.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Live Demo:** https://endearing-dolphin-0b6714.netlify.app/
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎯 Project Goals
+- Build a responsive SPA for indoor plant care and shopping.  
+- Implement secure Firebase authentication (Email/Password + Google Sign-In).  
+- Protect routes for logged-in users (Plant Details, Profile).  
+- Display JSON-based plant data dynamically.  
+- Maintain smooth SPA navigation and minimalist design.
+
+---
+
+## 🧩 Key Features
+
+### 1️⃣ Layout
+- **Navbar:** Logo, Home, Plants, My Profile  
+  - Logged-in → User avatar + dropdown (Name & Logout)  
+  - Logged-out → Login & Register buttons  
+- **Footer:** Quick links, social icons, copyright  
+- Persistent Navbar & Footer on all routes
+
+---
+
+### 2️⃣ Home Page Sections
+- **Hero Slider:** Swiper.js / Framer Motion animations  
+- **Top Rated Plants:** Cards showing image, name, price, rating, “View Details”  
+- **Plant Care Tips:** Watering, sunlight, fertilizing info  
+- **Meet Our Green Experts:** 3–4 experts with images and specialization  
+- **Optional:** Eco Decor Ideas / Plant of the Week  
+
+---
+
+### 3️⃣ Plant Details Page (Protected)
+- Full plant info: image, name, description, price, rating, stock  
+- **Book Consultation Form:** Name, Email, “Book Now” → success toast  
+- Redirects unauthenticated users to Login page
+
+---
+
+### 4️⃣ Authentication
+- **Signup:** Name, Email, Photo URL, Password + validation  
+  - Password rules: ≥6 characters, at least one uppercase & one lowercase  
+  - Google Sign-In supported  
+- **Login:** Email, Password, Forgot Password, Google Sign-In  
+- **Password toggle:** Show/hide on both forms  
+- Redirects to desired page after login/signup
+
+---
+
+### 5️⃣ My Profile
+- Displays Name, Email, Photo (or default icon)  
+- **Update Profile:** Updates Firebase `displayName` and `photoURL`  
+- Real-time updates reflected in Navbar
+
+---
+
+## 📄 JSON Data
+`plants.json` stores plant information:
+
+```json
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://i.postimg.cc/example1.png",
+    "providerName": "UrbanGreen Studio"
+  }
+]
