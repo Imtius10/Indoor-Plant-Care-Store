@@ -9,15 +9,20 @@ import Profile from "../Pages/Profile";
 import PrivateRoute from "../Components/PrivateRoute";
 import Plants from "../Pages/Plants";
 import ForgetPassword from "../Pages/ForgetPassword";
+import Error from "../Pages/Error";
 
 const router = createBrowserRouter([
     {
         path: '/',
         Component: HomeLayout,
+        errorElement: <Error></Error>,
         children: [
             {
                 index: true,
-                loader: () => fetch('/plants.json'),
+                loader: async () => {
+                    const res = await fetch("/plants.json");
+                    return res.json();
+                },
                 Component: Home,
 
 
@@ -28,7 +33,10 @@ const router = createBrowserRouter([
             },
             {
                 path: "/plantDetails/:id",
-                loader: () => fetch('/plants.json'),
+                loader: async () => {
+                    const res = await fetch("/plants.json");
+                    return res.json();
+                },
                 element: (
                     <PrivateRoute>
                         <PlantDetails />
@@ -45,14 +53,20 @@ const router = createBrowserRouter([
                 Component: Profile
             },
             {
-                path:'/all-plants',
-                loader: () => fetch('/plants.json'),
-                Component:Plants
-
+                path: '/all-plants',
+                loader: async () => {
+                    const res = await fetch("/plants.json");
+                    return res.json();
+                },
+                element: (
+                    <PrivateRoute>
+                        <Plants></Plants>
+                    </PrivateRoute>
+                )
             },
             {
-                path:'/forgot-password',
-                Component:ForgetPassword
+                path: '/forgot-password',
+                Component: ForgetPassword
             }
         ]
     }
