@@ -17,12 +17,10 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  
   const loginUser = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -31,11 +29,16 @@ const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
+  const doSignOut = () => {
+    return auth.signOut();
+  };
+
   const authData = {
     user,
     setUser,
     createUser,
-    loginUser, 
+    loginUser,
+    doSignOut, 
   };
 
   return (
