@@ -8,6 +8,7 @@ import Login from "../Pages/Login";
 import Profile from "../Pages/Profile";
 import PrivateRoute from "../Components/PrivateRoute";
 import Plants from "../Pages/Plants";
+import ForgetPassword from "../Pages/ForgetPassword";
 
 const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
                 loader: () => fetch('/plants.json'),
                 Component:Plants
 
+            },
+            {
+                path:'/forgot-password',
+                Component:ForgetPassword
             }
         ]
     }
