@@ -1,10 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { updateProfile } from "firebase/auth";
+import { updateProfile, getAuth } from "firebase/auth";
 import toast, { Toaster } from "react-hot-toast";
 
 const Profile = () => {
   const { user, setUser } = useContext(AuthContext);
+  const auth = getAuth();
 
   const [formData, setFormData] = useState({
     displayName: user?.displayName || "",
@@ -31,14 +32,17 @@ const Profile = () => {
     if (!user) return;
 
     setLoading(true);
+
     try {
-      await updateProfile(user, {
+      await updateProfile(auth.currentUser, {
         displayName: formData.displayName,
         photoURL: formData.photoURL,
       });
 
-      // Update user state in context
-      setUser({ ...user, displayName: formData.displayName, photoURL: formData.photoURL });
+      // update state so navbar updates immediately
+      setUser({
+        ...auth.currentUser,
+      });
 
       toast.success("Profile updated successfully!");
     } catch (error) {
@@ -49,14 +53,20 @@ const Profile = () => {
     }
   };
 
-  if (!user) return <p className="text-center mt-8 text-red-500">Please login to view your profile.</p>;
-
+  if (!user)
+    return (
+      <p className="text-center mt-8 text-red-500">
+        Please login to view your profile.
+      </p>
+    );
+  
   return (
     <div className="container mx-auto py-12 px-4 max-w-lg">
       <Toaster position="top-right" />
-      <h1 className="text-3xl font-bold text-green-900 mb-6 text-center">My Profile</h1>
+      <h1 className="text-3xl font-bold text-green-900 mb-6 text-center">
+        My Profile
+      </h1>
 
-      {/* Display Current Photo */}
       {user.photoURL && (
         <div className="flex justify-center mb-6">
           <img
@@ -64,10 +74,17 @@ const Profile = () => {
             alt="Profile"
             className="w-32 h-32 rounded-full object-cover shadow-lg"
           />
+          <div><h1>{user.name}</h1></div>
+
         </div>
+        
+        
       )}
 
-      <form onSubmit={handleUpdate} className="flex flex-col space-y-4 bg-white p-6 rounded-2xl shadow-md">
+      <form
+        onSubmit={handleUpdate}
+        className="flex flex-col space-y-4 bg-white p-6 rounded-2xl shadow-md text-black"
+      >
         <label className="font-semibold text-gray-700">Name</label>
         <input
           type="text"
